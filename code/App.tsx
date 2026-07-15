@@ -1,27 +1,36 @@
-import { Alert, StyleSheet, Text, Image } from "react-native";
+import { Alert, StyleSheet, Text, Image, Button, TouchableOpacity, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
+  const onButtonPress = () => {
+    Alert.alert("Button Pressed", "You pressed the button!");
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Hello, World</Text>
+      <Text style={styles.title}>My App</Text>
       <Image 
         source={require("./assets/splash-icon.png")}
         style={styles.image1}
       />
-      <Image
-        source={{ uri: "https://picsum.photos/200/300" }}
-        style={styles.image2}
-      />
-      <Image
-        source={{ uri: "https://picsum.photos/200/300" }}
-        style={styles.image2}
-        blurRadius={10}
-      />
-      <Image
-        source={{ uri: "https://picsum.photos/200/300" }}
-        style={styles.image2}
-        borderRadius={100}
+      <Pressable onPress={onButtonPress}>
+        <Image
+          source={{ uri: "https://picsum.photos/200/300" }}
+          style={styles.image2}
+          borderRadius={100}
+        />
+      </Pressable>
+      <TouchableOpacity onPress={onButtonPress}>
+        <Image
+          source={{ uri: "https://picsum.photos/200/300" }}
+          style={styles.image2}
+          borderRadius={100}
+        />
+      </TouchableOpacity>
+
+      <Button 
+        title="Press on Me" 
+        onPress={onButtonPress}
       />
     </SafeAreaView>
   );
@@ -31,6 +40,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // area of screen that the component should take up
     backgroundColor: "white",
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   image1: {
     width: 200,
