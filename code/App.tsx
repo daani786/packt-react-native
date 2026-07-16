@@ -10,24 +10,17 @@ export default function App() {
           flex: 1,
           flexDirection: "row",
           alignItems: "center",
-          flexWrap: "wrap",
-          alignContent: "center",
+          justifyContent: "center",
         }}
       >
         <View
           style={{ backgroundColor: "red", width: 90, height: 90 }}
         ></View>
         <View
-          style={{ backgroundColor: "gray", width: 90, height: 90 }}
+          style={{ backgroundColor: "green", width: 90, height: 90, top: 100, left: 20, position: "relative" }}
         ></View>
         <View
           style={{ backgroundColor: "gold", width: 90, height: 90 }}
-        ></View>
-        <View
-          style={{ backgroundColor: "pink", width: 90, height: 90 }}
-        ></View>
-        <View
-          style={{ backgroundColor: "green", width: 90, height: 90 }}
         ></View>
       </View>
     </SafeAreaView>
