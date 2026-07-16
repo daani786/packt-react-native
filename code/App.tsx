@@ -4,14 +4,23 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ backgroundColor: "blue", flex: 1 }} >
-        <View style={{ backgroundColor: "red", flex: 1 }} >
-          <Text style={styles.title}>Hello, World!</Text>
-        </View>
-        <View style={{ backgroundColor: "pink", flex: 1 }} >
-        </View>
-        <View style={{ backgroundColor: "green", flex: 1 }} >
-        </View>
+      <View
+        style={{
+          backgroundColor: "blue",
+          flex: 1,
+          justifyContent: "center", // for vertical alignment
+          alignItems: "center", // for horizontal alignment
+        }}
+      >
+        <View
+          style={{ backgroundColor: "red", width: 100, height: 100 }}
+        ></View>
+        <View
+          style={{ backgroundColor: "pink", width: 100, height: 100 }}
+        ></View>
+        <View
+          style={{ backgroundColor: "green", width: 100, height: 100 }}
+        ></View>
       </View>
     </SafeAreaView>
   );
