@@ -1,24 +1,28 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { scale, verticalScale, s, vs } from 'react-native-size-matters';
+import { useState } from "react";
 
 export default function App() {
-
+  const [state, setState] = useState(20);
+  const increaseValue = () => {
+    setState(prevState => prevState + 1);
+  };
+  const decreaseValue = () => {
+    setState(prevState => prevState - 1);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View
         style={{
           backgroundColor: "blue",
           flex: 1,
+          justifyContent: "center",
         }}
       >
-        <View
-          style={{
-            backgroundColor: "red",
-            width: scale(300),
-            height: verticalScale(600),
-          }}
-        ></View>
+        <Text style={styles.title}>Hello World</Text>
+        <Button title="Decrease" onPress={decreaseValue}></Button>
+        <Text style={{fontSize: 100}}>{state}</Text>
+        <Button title="Increase" onPress={increaseValue}></Button>
       </View>
     </SafeAreaView>
   );
