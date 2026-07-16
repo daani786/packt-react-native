@@ -1,14 +1,8 @@
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { scale, verticalScale, s, vs } from 'react-native-size-matters';
 
 export default function App() {
-
-  // dont set width in pixel
-  // use percentage, dimensions or libraries
-  // console.log('screen', Dimensions.get("screen"));
-  // console.log('window', Dimensions.get("window"));
-  const PHONE_WIDTH = Dimensions.get("window").width;
-  const PHONE_HEIGHT = Dimensions.get("window").height;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -19,7 +13,11 @@ export default function App() {
         }}
       >
         <View
-          style={{ backgroundColor: "red", width: PHONE_WIDTH, height: PHONE_HEIGHT }}
+          style={{
+            backgroundColor: "red",
+            width: scale(300),
+            height: verticalScale(600),
+          }}
         ></View>
       </View>
     </SafeAreaView>
