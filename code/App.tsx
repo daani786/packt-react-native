@@ -8,18 +8,26 @@ export default function App() {
         style={{
           backgroundColor: "blue",
           flex: 1,
-          justifyContent: "center", // for vertical alignment
-          alignItems: "center", // for horizontal alignment
+          flexDirection: "row",
+          alignItems: "center",
+          flexWrap: "wrap",
+          alignContent: "center",
         }}
       >
         <View
-          style={{ backgroundColor: "red", width: 100, height: 100 }}
+          style={{ backgroundColor: "red", width: 90, height: 90 }}
         ></View>
         <View
-          style={{ backgroundColor: "pink", width: 100, height: 100 }}
+          style={{ backgroundColor: "gray", width: 90, height: 90 }}
         ></View>
         <View
-          style={{ backgroundColor: "green", width: 100, height: 100 }}
+          style={{ backgroundColor: "gold", width: 90, height: 90 }}
+        ></View>
+        <View
+          style={{ backgroundColor: "pink", width: 90, height: 90 }}
+        ></View>
+        <View
+          style={{ backgroundColor: "green", width: 90, height: 90 }}
         ></View>
       </View>
     </SafeAreaView>
