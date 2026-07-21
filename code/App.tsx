@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View, Button, Modal } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
+// reference: https://icons.expo.fyi/Index
+import AntDesign from '@expo/vector-icons/AntDesign';
+
 
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -20,6 +23,8 @@ export default function App() {
         <Modal visible={modalVisible} animationType="slide">
           <Text style={{fontSize: 50}}>Modal is opened</Text>
           <Button title="Hide Modal" onPress={() => setModalVisible(false)}></Button>
+          <AntDesign name="close-circle" size={30} color="red" onPress={() => setModalVisible(false)}/>
+          
         </Modal>
       </View>
     </SafeAreaView>
