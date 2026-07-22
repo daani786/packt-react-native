@@ -1,32 +1,29 @@
-import { StyleSheet, Text, View, Button, Modal } from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
-// reference: https://icons.expo.fyi/Index
-import AntDesign from '@expo/vector-icons/AntDesign';
-
 
 export default function App() {
-  const [modalVisible, setModalVisible] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text style={styles.title}>Hello World</Text>
-      </View>
-      <View
+      <ImageBackground
+        source={require("./assets/background.jpg")}
         style={{
           backgroundColor: "gold",
           flex: 1,
           justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <Button title="Show Modal" onPress={() => setModalVisible(true)}></Button>
-        <Modal visible={modalVisible} animationType="slide">
-          <Text style={{fontSize: 50}}>Modal is opened</Text>
-          <Button title="Hide Modal" onPress={() => setModalVisible(false)}></Button>
-          <AntDesign name="close-circle" size={30} color="red" onPress={() => setModalVisible(false)}/>
-          
-        </Modal>
-      </View>
+        <View style={{
+          backgroundColor: "white",
+          width: 200,
+          height: 200,
+          borderRadius: 15,
+        }}>
+          <Text style={styles.title}>Hello World</Text>
+        </View>
+      </ImageBackground>
+      
     </SafeAreaView>
   );
 }
