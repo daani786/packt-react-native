@@ -1,29 +1,34 @@
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 
 export default function App() {
+  const [text, setText] = useState("");
+  console.log("user typed text: ", text);
+
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground
-        source={require("./assets/background.jpg")}
-        style={{
-          backgroundColor: "gold",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <View style={{
-          backgroundColor: "white",
-          width: 200,
-          height: 200,
-          borderRadius: 15,
-        }}>
-          <Text style={styles.title}>Hello World</Text>
-        </View>
-      </ImageBackground>
-      
+      <Text style={styles.title}>Hello World</Text>
+      <View style={{
+        alignItems: "center",
+      }}>
+        <TextInput style={{ 
+              height: 60,
+              width: "80%",
+              borderRadius: 4,
+              borderWidth: 1,
+              borderColor: "grey",
+            }}
+            placeholder="Enter Your Name" 
+            keyboardType="default"
+            // secureTextEntry={true}
+            // multiline={true}
+            // editable={false}
+            value={text}
+            onChangeText={setText}
+        />
+        <Text style={styles.title}>Welcome {text}</Text>
+      </View>
     </SafeAreaView>
   );
 }
